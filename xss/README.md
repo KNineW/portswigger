@@ -20,4 +20,10 @@ back按钮的herf会获取renturnpath中的值。如果将returnpath该改成我
 可以看到value中<、/这些都被编码
 输入代码创建鼠标移动事件，注意把前后的双引号闭合 ```"onmouseover="alert(/xss/)```
 ![S4](img/S4.png)
+## 5.Reflected XSS into a JavaScript string with angle brackets HTML encoded
+![Q5](img/Q5.png)
+在搜索栏中搜索，注意以下script代码
+![T5](img/T5.png)
+闭合前后的单引号，并且构造成一个完整js语句';alert(1);'，触发XSS弹窗。
 
+# Practitioner
