@@ -9,3 +9,6 @@ document.write向html写内容。search属性是一个可读可写的字符串�
 不执行插入的<script>标签。故输入其他标签触发js代码
 ```<img src='' onerror="alert(1)">```
 img标签当资源加载失败或无法使用时，触发onerror。
+## 3.DOM XSS in jQuery anchor href attribute sink using location.search source
+herf可以链接到URL，也可以加载脚本（比如 href="javascript:alert('1');"）
+
