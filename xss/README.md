@@ -27,3 +27,13 @@ back按钮的herf会获取renturnpath中的值。如果将returnpath该改成我
 闭合前后的单引号，并且构造成一个完整js语句';alert(1);'，触发XSS弹窗。
 
 # Practitioner
+## 1. DOM XSS in document.write sink using sourcelocation.search inside a select element
+![Q6](img/Q6.png)
+针对storeId,可以在url中直接添加（&storeId=...),输入的内容会被添加到代码中
+![6.2](img/6.2.png)
+闭合标签，触发alert
+![6.3](img/6.3.png)
+## 2. DOM XSS in AngularJS expression with anglebrackets and double quotes HTML-encoded
+![Q7](img/Q7.png)
+AngularJS是一个广受欢迎的JavaScript库，它会扫描包含ng-app属性（亦称AngularJS指令）的HTML节点内容。当在HTML代码中添加指令时，你可以在双大括号内执行JavaScript表达式。这种技术在处理被编码的尖括号时非常实用。eg:{{2+2}}
+在搜索栏输入{{$on.constructor('alert(1)')()}}，利用$on引出构造函数，定义函数（触发alert的函数），使用（）引用函数，利用双大括号包裹。
