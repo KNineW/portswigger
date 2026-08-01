@@ -15,4 +15,9 @@ herf可以链接到URL，也可以加载脚本（比如 href="javascript:alert('
 提示点击back回到上一页
 ![s3](img/S3.png)
 back按钮的herf会获取renturnpath中的值。如果将returnpath该改成我们要执行获取cookie的js代码```javascript:alert(doucment.cookie)```，则也会被传进herf属性，又由于href属性是可以加载脚本的，所以会执行这个js代码。从而达到获取cookie的效果。
+## 4.Reflected XSS into attribute with angle brackets HTML-encoded
+![T4](img/T4.png)
+可以看到value中<、/这些都被编码
+输入代码创建鼠标移动事件，注意把前后的双引号闭合 ```"onmouseover="alert(/xss/)```
+![S4](img/S4.png)
 
