@@ -11,4 +11,8 @@ document.write向html写内容。search属性是一个可读可写的字符串�
 img标签当资源加载失败或无法使用时，触发onerror。
 ## 3.DOM XSS in jQuery anchor href attribute sink using location.search source
 herf可以链接到URL，也可以加载脚本（比如 href="javascript:alert('1');"）
+![lab](img/Q3.png)
+提示点击back回到上一页
+![s3](img/S3.png)
+back按钮的herf会获取renturnpath中的值。如果将returnpath该改成我们要执行获取cookie的js代码```javascript:alert(doucment.cookie)```，则也会被传进herf属性，又由于href属性是可以加载脚本的，所以会执行这个js代码。从而达到获取cookie的效果。
 
